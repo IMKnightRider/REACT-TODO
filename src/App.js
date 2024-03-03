@@ -16,10 +16,11 @@ function App() {
   }])
 
   const addNew = (t, d) => {
-    let temp = todos
-    temp.push({title: t,desc:d})
-    setTodos(temp)
-    console.log(temp)
+    setTodos([...todos, {
+      title: t,
+      desc: d
+    }])
+
   }
 
   const onDelete = (todo) => {
@@ -34,11 +35,10 @@ function App() {
       <h1>Hello World</h1>
       <h1>This an Simple Todo App</h1>
       <h2>Enter Title</h2>
-      <input type='text' value={title} onChange={(e) => setTitle(e.value)} />
+      <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} />
       <h2>Enter Desc</h2>
-      <input type='text' value={desc} onChange={(e) => setDesc(e.value)} />
+      <input type='text' value={desc} onChange={(e) => setDesc(e.target.value)} />
       <button onClick={() => addNew(title, desc)}>Add a New One</button>
-
       {
         todos.map((todo, i) => {
           return <Todo key={i} todo={todo} onDelete={onDelete} />
