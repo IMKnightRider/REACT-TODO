@@ -25,6 +25,19 @@ function App() {
     }))
   }
 
+  const onUpdate = (todo) => {
+    console.log(todo)
+    const newTitle = prompt("Enter New Title")
+    const newDesc = prompt("Enter New Desc")
+    setTodos(todos.map((e) => {
+      if (e === todo) {
+        e.title = newTitle;
+        e.desc = newDesc;
+      }
+      return e;
+    }))
+  }
+
 
 
   const [mode, setMode] = useState("light")
@@ -55,7 +68,7 @@ function App() {
         {
           todos.length === 0 ? <h3>No Todos Add For Yourself</h3> :
           todos.map((todo, i) => {
-            return <Todo key={i} todo={todo} onDelete={onDelete} />
+            return <Todo key={i} todo={todo} onUpdate={onUpdate} onDelete={onDelete} />
           })
         }
       </themeContext.Provider>
