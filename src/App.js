@@ -16,8 +16,10 @@ function App() {
   }])
 
   const addNew = (t, d) => {
-    todos.push({ title: t, desc: d })
-    console.log(todos)
+    let temp = todos
+    temp.push({title: t,desc:d})
+    setTodos(temp)
+    console.log(temp)
   }
 
   const onDelete = (todo) => {
