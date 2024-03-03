@@ -4,8 +4,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>Todo App</h1>
-      <input type="text" name="Title" id="" />
+      <h1>Hello World</h1>
+      <h1>This an Simple Todo App</h1>
     </div>
   );
 }
