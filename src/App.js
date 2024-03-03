@@ -24,7 +24,7 @@ function App() {
     console.log("Done")
     console.log(todo)
     setTodos(todos.filter((e)=>{
-      return e!=todos
+      return e !== todo
     }))
   }
   return (
